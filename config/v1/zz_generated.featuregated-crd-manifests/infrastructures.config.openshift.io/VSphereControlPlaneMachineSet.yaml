@@ -946,6 +946,7 @@ spec:
                 - HighlyAvailable
                 - SingleReplica
                 - External
+                - TWONODEBABY
                 type: string
               cpuPartitioning:
                 default: None
@@ -986,6 +987,7 @@ spec:
                 enum:
                 - HighlyAvailable
                 - SingleReplica
+                - TWONODEBABY
                 type: string
               platform:
                 description: |-

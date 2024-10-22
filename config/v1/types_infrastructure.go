@@ -99,7 +99,7 @@ type InfrastructureStatus struct {
 	// The 'External' mode indicates that the control plane is hosted externally to the cluster and that
 	// its components are not visible within the cluster.
 	// +kubebuilder:default=HighlyAvailable
-	// +kubebuilder:validation:Enum=HighlyAvailable;SingleReplica;External
+	// +kubebuilder:validation:Enum=HighlyAvailable;SingleReplica;External;TWONODEBABY
 	ControlPlaneTopology TopologyMode `json:"controlPlaneTopology"`
 
 	// infrastructureTopology expresses the expectations for infrastructure services that do not run on control
@@ -110,7 +110,7 @@ type InfrastructureStatus struct {
 	// and the operators should not configure the operand for highly-available operation
 	// NOTE: External topology mode is not applicable for this field.
 	// +kubebuilder:default=HighlyAvailable
-	// +kubebuilder:validation:Enum=HighlyAvailable;SingleReplica
+	// +kubebuilder:validation:Enum=HighlyAvailable;SingleReplica;TWONODEBABY
 	InfrastructureTopology TopologyMode `json:"infrastructureTopology"`
 
 	// cpuPartitioning expresses if CPU partitioning is a currently enabled feature in the cluster.
@@ -144,6 +144,8 @@ const (
 	// that any of the control plane components such as kubernetes API server or etcd are visible within
 	// the cluster.
 	ExternalTopologyMode TopologyMode = "External"
+
+	TwoNodeTopologyMode TopologyMode = "TWONODEBABY"
 )
 
 // CPUPartitioningMode defines the mode for CPU partitioning
